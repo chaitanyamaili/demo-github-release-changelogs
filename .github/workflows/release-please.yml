@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - main
+
+# This workflow uses an action that requires a personal access token
+permissions:
+  contents: write
+  pull-requests: write
+
+# This workflow will run the `release-please` action on every push to the main branch
+name: release-please
+
+# This workflow contains a single job that runs the `release-please` action
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        with:
+          # this is the token that the action will use
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # this is a built-in strategy in release-please, see "Action Inputs"
+          # for more options
+          release-type: simple
