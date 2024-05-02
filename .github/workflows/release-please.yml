@@ -19,7 +19,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v4
         with:
           # this is the token that the action will use
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_RELEASE_PLEASE_SECRET }}
           # this is a built-in strategy in release-please, see "Action Inputs"
           # for more options
           release-type: simple
